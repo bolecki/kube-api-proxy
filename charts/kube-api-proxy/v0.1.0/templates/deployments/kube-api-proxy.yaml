@@ -15,6 +15,10 @@ spec:
       labels:
         app: {{ template "kube-api-proxy.name" . }}-kube-api-proxy
         release: {{ .Release.Name }}
+  selector:
+    matchLables:
+      app: {{ template "kube-api-proxy.name" . }}-kube-api-proxy
+      release: {{ .Release.Name }}
     spec:
       containers:
         - name: {{ template "kube-api-proxy.fullname" . }}-kube-api-proxy
