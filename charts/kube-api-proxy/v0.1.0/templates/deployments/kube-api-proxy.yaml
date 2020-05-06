@@ -11,7 +11,7 @@ spec:
   strategy:
     type: {{ .Values.config.updateStrategy }}
   selector:
-    matchLables:
+    matchLabels:
       app: {{ template "kube-api-proxy.name" . }}-kube-api-proxy
       release: {{ .Release.Name }}
   template:
